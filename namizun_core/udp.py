@@ -15,13 +15,15 @@ uploader_count = 0
 def start_udp_uploader():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     target_ip, game_port = ip.get_random_ip_port()
+    while game_port == 0:
+        target_ip, game_port = ip.get_random_ip_port()  # Retry if port is 0
     remain_upload_size = upload_size = int(
         uniform(total_upload_size_for_each_ip * 0.7, total_upload_size_for_each_ip * 1.2))
     started_time = get_now_time()
     while remain_upload_size >= 0:
         selected_buffer_range = choices(buffer_ranges, database.buffers_weight, k=1)[0]
         buf = int(uniform(selected_buffer_range - 5000, selected_buffer_range))
-        if sock.sendto(bytes(buf), (target_ip, game_port)):
+        if game_port != 0 and sock.sendto(bytes(buf), (target_ip, game_port)):
             remain_upload_size -= buf
             sleep(0.001 * int(uniform(5, 26)) / database.get_cache_parameter('coefficient_buffer_sending_speed'))
     sock.close()
