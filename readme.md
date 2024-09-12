@@ -1,11 +1,11 @@
-# NAMIZUN
+# NAMIZUN PLUS
 
 This project is used to remove the limitation of asymmetric ratio for uploading and downloading Iranian servers
 
 ## One line installation command:
 
 ```bash
-sudo curl https://raw.githubusercontent.com/malkemit/namizun/master/else/setup.sh | sudo bash
+sudo curl https://raw.githubusercontent.com/sinaes21/namizun-plus/master/else/setup.sh | sudo bash
 ```
 
 ## Manual installation
@@ -37,7 +37,7 @@ git init
 ```
 
 ```bash
-git remote add origin https://github.com/malkemit/namizun.git
+git remote add origin https://github.com/sinaes21/namizun-plus.git
 ```
 
 ```bash
@@ -104,12 +104,3 @@ High CPU consumption will cause restrictions from the provider (it is better to 
 
 - If you are using a **dedicated server**, it is suggested to virtualize it and use your virtual servers.\
 In this way, your traffic will be distributed among more IPs and will prevent you from being banned.
-
-## Donate:
-
-If you enjoyed this script you could donate me by donating!\
-Your support allows me to continue my work, **fight against Internet censorship in Iran**
-
-`USDT (TRC20) or TRON : TDuBY7FpRkaMU1rhQjQa6sqpNdKhmM8Nx3`
-
-`USDT (ERC20) : 0xFAFaf5D1e2e6a11F04e318430ff01031B63A58e1`
