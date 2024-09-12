@@ -31,11 +31,15 @@ def cache_ip_ports_from_database():
 
 
 def get_random_ip_port():
-    if len(cache_ip_list) > 0:
-        target_ip, target_port = choice(list(cache_ip_list.items()))
-        del cache_ip_list[target_ip]
-    else:
-        target_ip = get_random_ip_from_database()
-        target_port = get_game_port()
-        database.set_ip_port_to_database(target_ip, target_port)
+    while True:
+        if len(cache_ip_list) > 0:
+            target_ip, target_port = choice(list(cache_ip_list.items()))
+            del cache_ip_list[target_ip]
+        else:
+            target_ip = get_random_ip_from_database()
+            target_port = get_game_port()
+            database.set_ip_port_to_database(target_ip, target_port)
+        if target_port != 0:
+            break
     return target_ip, target_port
+    
