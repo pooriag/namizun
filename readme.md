@@ -5,7 +5,7 @@ This project is used to remove the limitation of asymmetric ratio for uploading 
 ## One line installation command:
 
 ```bash
-sudo curl https://raw.githubusercontent.com/sinaes21/namizun-plus/master/else/setup.sh | sudo bash
+sudo curl https://raw.githubusercontent.com/PacketAlchemist/namizun-plus/master/else/setup.sh | sudo bash
 ```
 
 ## Manual installation
@@ -37,7 +37,7 @@ git init
 ```
 
 ```bash
-git remote add origin https://github.com/sinaes21/namizun-plus.git
+git remote add origin https://github.com/PacketAlchemist/namizun-plus.git
 ```
 
 ```bash
