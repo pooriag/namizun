@@ -37,10 +37,10 @@ def get_network_usage():
 def get_uploader_count_base_timeline():
     time_in_iran = int(get_now_hour())
     default_uploader_count = database.get_cache_parameter('coefficient_uploader_threads_count') * 10
-    maximum_allowed_coefficient = [2, 1.6, 1, 0.6, 0.2, 0.1, 0.6, 1, 1.2, 1.3, 1.4, 1.5,
-                                   1.3, 1.4, 1.6, 1.5, 1.3, 1.5, 1.7, 1.8, 2, 1.3, 1.5, 1.8]
-    minimum_allowed_coefficient = [1.6, 1, 0.6, 0.2, 0, 0, 0.2, 0.8, 1, 1.1, 1.2, 1.3,
-                                   1.1, 1.2, 1.5, 1.4, 1.2, 1.4, 1.5, 1.6, 1.8, 1, 1.2, 1.5]
+    maximum_allowed_coefficient = [2.25, 2, 1.75, 1.5, 1.25, 1, 1.25, 1.5, 1.75, 1.875, 2, 2.125,
+                                    2.25, 2.375, 2.25, 2.125, 2, 2.07, 2.14, 2.21, 2.28, 2.35, 2.42, 2.5]
+    minimum_allowed_coefficient = [2.05, 1.8, 1.55, 1.3, 1.05, 0.8, 1.05, 1.3, 1.55, 1.675, 1.8, 1.925,
+                                    2.05, 2.175, 2.05, 1.925, 1.8, 1.87, 1.94, 2.01, 2.08, 2.15, 2.3]
     return int(uniform(minimum_allowed_coefficient[time_in_iran] * default_uploader_count,
                        maximum_allowed_coefficient[time_in_iran] * default_uploader_count))
 
