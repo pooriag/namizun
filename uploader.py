@@ -37,10 +37,11 @@ def get_network_usage():
 def get_uploader_count_base_timeline():
     time_in_iran = int(get_now_hour())
     default_uploader_count = database.get_cache_parameter('coefficient_uploader_threads_count') * 10
-    maximum_allowed_coefficient = [2.25, 2, 1.75, 1.5, 1.25, 1, 1.25, 1.5, 1.75, 1.875, 2, 2.125,
-                                    2.25, 2.375, 2.25, 2.125, 2, 2.07, 2.14, 2.21, 2.28, 2.35, 2.42, 2.5]
-    minimum_allowed_coefficient = [2.05, 1.8, 1.55, 1.3, 1.05, 0.8, 1.05, 1.3, 1.55, 1.675, 1.8, 1.925,
-                                    2.05, 2.175, 2.05, 1.925, 1.8, 1.87, 1.94, 2.01, 2.08, 2.15, 2.3]
+    maximum_allowed_coefficient = [1.75, 1.5, 1.25, 1.0, 0.75, 0.5, 0.75, 1.0, 1.25, 1.375, 1.5, 1.625,
+                                    1.75, 1.875, 1.75, 1.625, 1.5, 1.57, 1.64, 1.71, 1.78, 1.85, 1.92, 2.0]
+    minimum_allowed_coefficient = [1.55, 1.3, 1.05, 0.8, 0.55, 0.3, 0.55, 0.8, 1.05, 1.175, 1.3, 1.425,
+                                    1.55, 1.675, 1.55, 1.425, 1.3, 1.37, 1.44, 1.51, 1.58, 1.65, 1.72, 1.8]
+
     return int(uniform(minimum_allowed_coefficient[time_in_iran] * default_uploader_count,
                        maximum_allowed_coefficient[time_in_iran] * default_uploader_count))
 
@@ -61,4 +62,4 @@ while True:
             else:
                 remain_uploader -= uploader_count
             remain_upload_size -= uploader_count * upload_size_for_each_ip
-    sleep(randint(5, 30))
+    sleep(randint(5, 20))
