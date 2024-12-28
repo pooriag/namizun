@@ -29,6 +29,6 @@ def line_jumper(lines):
 
 
 def banner():
-    custom_fig = Figlet(font='poison')
+    custom_fig = Figlet(font='small')
     clear_terminal()
     print(f"{gold_color}{custom_fig.renderText('NAMIZUN-PLUS')}{reset_color}")
