@@ -23,7 +23,7 @@ mkdir -p /var/www/namizun && cd /var/www/namizun
 
 echo 'Pulling the repository (step 3)'
 git init
-git remote add origin https://github.com/sinaes21/namizun-plus.git
+git remote add origin https://github.com/PacketAlchemist/namizun-plus.git
 git pull origin master
 if [ $? != 0 ]; then
   echo 'could not clone the repository'
